@@ -1,6 +1,5 @@
-import { execSync } from "node:child_process";
 import { mkdirSync, writeFileSync } from "node:fs";
-import { basename } from "node:path";
+import { getProjectName, getRepositoryURL } from "../infra/system";
 
 export function makeDirs() {
 	mkdirSync("src");
@@ -15,12 +14,6 @@ export function makeFiles() {
 	makeSettingsJSON();
 }
 
-function getProjectName(): string {
-	const currentDirPath = process.cwd();
-	const currentDir = basename(currentDirPath);
-	return currentDir;
-}
-
 function makeGitIgnore() {
 	const lines = ["node_modules", "dist"];
 	const content = `${lines.join("\n")}\n`;
@@ -29,10 +22,7 @@ function makeGitIgnore() {
 
 function makePackageJSON() {
 	const projectName = getProjectName();
-	const repositoryURL = execSync("git config --get remote.origin.url", {
-		encoding: "utf8",
-		stdio: "pipe",
-	});
+	const repositoryURL = getRepositoryURL();
 	const json = {
 		name: `@asp1020/${projectName}`,
 		version: "1.0.0",
