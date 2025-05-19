@@ -1,0 +1,31 @@
+{
+  "name": "@asp1020/node-template",
+  "version": "1.0.0",
+  "description": "A template for Node.js projects",
+  "main": "src/bin/node-init.ts",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Asapi1020/node-template.git"
+  },
+  "bin": {
+    "node-init": "./dist/bin/node-init.js"
+  },
+  "scripts": {
+    "lint": "biome lint",
+    "format": "biome check --write",
+    "clean": "rimraf dist",
+    "build": "tsc && tsc-esm-fix dist",
+    "debug": "pnpx vite-node src/bin/node-init.ts"
+  },
+  "author": "Asapi1020",
+  "license": "GPL-3.0-only",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.15.19",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^6.0.1",
+    "tsc-esm-fix": "^3.1.2",
+    "typescript": "^5.8.3"
+  }
+}
