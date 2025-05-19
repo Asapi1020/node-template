@@ -15,5 +15,5 @@ export function getRepositoryURL(): string {
 	return execSync("git config --get remote.origin.url", {
 		encoding: "utf8",
 		stdio: "pipe",
-	}).replace("\n", "");
+	}).trim();
 }
