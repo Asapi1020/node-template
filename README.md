@@ -2,7 +2,7 @@
 
 A template to begin my node project.
 
-1. Clone this repository and you can configure by yourself.
+1. Clone this repository and configure it yourself.
 
 2. Build
 
