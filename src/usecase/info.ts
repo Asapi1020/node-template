@@ -69,8 +69,33 @@ function makeBiomeJSON() {
 		},
 		linter: {
 			rules: {
+				complexity: {
+					noExcessiveCognitiveComplexity: "warn",
+					useDateNow: "warn",
+					useSimplifiedLogicExpression: "warn",
+				},
 				correctness: {
+					noConstantMathMinMaxClamp: "warn",
+					noInvalidNewBuiltin: "warn",
+					noUnusedFunctionParameters: "warn",
 					noUnusedImports: "error",
+					noUnusedPrivateClassMembers: "warn",
+					noUnusedVariables: "warn",
+				},
+				nursery: {
+					noEnum: "error",
+					noProcessEnv: "warn",
+					useAtIndex: "warn",
+					useExplicitType: "warn",
+				},
+				style: {
+					useBlockStatements: "warn",
+					useForOf: "warn",
+					useSingleCaseStatement: "warn",
+				},
+				suspicious: {
+					noEmptyBlockStatements: "warn",
+					useAwait: "warn",
 				},
 			},
 		},
